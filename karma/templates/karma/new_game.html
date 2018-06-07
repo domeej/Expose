@@ -1,0 +1,29 @@
+{% extends 'karma/structure.html' %}
+
+{% block body %}
+    <div class="container col-md-8 container-fluid pt-5">
+
+        <h1>Spiel eintragen</h1>
+
+
+        <div class="jumbotron">
+            <p>Drag & Drop Area</p>
+        </div>
+
+    </div>
+
+    <div class="container col-md-8 container-fluid pt-5">
+        {% if players %}
+            {% for player in players %}
+                <div class="container">
+                    <a>{{ player.name }} </a>
+                </div>
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}
+

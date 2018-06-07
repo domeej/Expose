@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= device-width, initial-scale = 1">
+    <link rel="stylesheet" href="{% static 'karma/bootstrap/css/bootstrap.css' %}"/>
+    <title>Shithead-Ranking</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light order-3 w-100">
+        <a class="navbar-brand pl-5" href="{% url 'karma:index' %}">Shithead</a>
+        <ul class="navbar-nav nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{%  url 'karma:index' %}">Ranking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'karma:new_game' %}">Spiel eintragen</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
