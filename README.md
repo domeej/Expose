@@ -1,5 +1,4 @@
-# Expose
-Expose and Karma-Ranking
+# Expose and Karma-Ranking
 
 Expose - Kommt noch
 
