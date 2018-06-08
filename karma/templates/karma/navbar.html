@@ -1,14 +1,28 @@
 {% extends 'karma/structure.html' %}
 
-{% block navbar %}
-<nav class ="navbar-dark navbar-expand-sm">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#" Ranking></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" Spiel eintragen></a>
-        </li>
-    </ul>
-</nav>
+{% block body %}
+    <div class="container col-md-8 container-fluid pt-5">
+
+        <h1>Spiel eintragen</h1>
+
+
+        <div class="jumbotron">
+            <p>Drag & Drop Area</p>
+        </div>
+
+    </div>
+
+    <div class="container col-md-8 container-fluid pt-5">
+        {% if players %}
+            {% for player in players %}
+                <div class="container">
+                    <a>{{ player.name }} </a>
+                </div>
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+
 {% endblock %}

@@ -18,4 +18,3 @@ class NewGameView(generic.ListView):
         print(Player.objects.all())
         return Player.objects.all()
 
-

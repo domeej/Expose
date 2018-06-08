@@ -1,29 +1,57 @@
 {% extends 'karma/structure.html' %}
 
+{% block additional_header %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".block").draggable({containment: 'document', revert: true, helper: 'clone'});
+
+            $(".area").droppable(
+                {
+                    accept: ".block",
+                    drop: function (ev, ui) {
+                        var droppedItem = $(ui.draggable);
+                        $(this).append(droppedItem);
+                    }
+                }
+            )
+        });
+    </script>
+{% endblock %}
+
 {% block body %}
+
     <div class="container col-md-8 container-fluid pt-5">
-
         <h1>Spiel eintragen</h1>
-
-
-        <div class="jumbotron">
+        <div id='list' class="jumbotron area">
             <p>Drag & Drop Area</p>
         </div>
-
     </div>
 
     <div class="container col-md-8 container-fluid pt-5">
         {% if players %}
             {% for player in players %}
-                <div class="container">
+                <div class="container block card-header">
                     <a>{{ player.name }} </a>
                 </div>
             {% endfor %}
 
         {% endif %}
-
     </div>
 
+    <div class="container col-md-8 text-center p-5">
+        <a class="nav-link" href="#">absenden</a>
+    </div>
 
 {% endblock %}
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
